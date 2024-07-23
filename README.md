@@ -1,16 +1,7 @@
-# the_auction
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# The Auction 
+Our blockchain-based auction app, built on the Flutter platform, delivers a secure, transparent, and fair auction experience. Leveraging blockchain technology, all transactions are recorded safely, ensuring the integrity of the auction process. The intuitive user interface is optimized for all devices, making it easy for you to participate and manage your account. Join our blockchain-powered auction ecosystem and experience the difference.
+## Installation
+-```git clone https://github.com/thien0709/TheAuction.git```
+## Run projett
+-```flutter pub get``` 
+-```flutter run```
