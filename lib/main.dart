@@ -1,7 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:the_auction/constants/constants.dart' as constants;
 import 'home.dart';
+import 'login.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -25,67 +27,49 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-void login() async {
-  HomeScreen();
-}
+  int _page = 0;
+  final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+
+  final List<Widget> _pages = [
+    HomePage(),
+    Center(child: Text('Page 2', style: TextStyle(fontSize: 24))),
+    Center(child: Text('Page 3', style: TextStyle(fontSize: 24))),
+    Center(child: Text('Page 4', style: TextStyle(fontSize: 24))),
+    Login(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Row(
           children: [
-            Icon(FontAwesomeIcons.ethereum, color: Color.fromARGB(255, 30, 210, 255),),
-            Text('The Auction' ,style: TextStyle(color: Color.fromARGB(255, 85, 85, 85),fontFamily: 'Koulen'),),
-          ],
-        ),
-      ),
-      body: Container(
-        padding: const EdgeInsets.only(
-          left: 20,
-          right: 20,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Welcome to The Auction', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,fontFamily: 'Koulen'),),
-            const SizedBox(height: 20,),
-            const Text('Please login to continue', style: TextStyle(fontSize: 12,fontFamily: 'JetBrainsMono'),),
-            const SizedBox(height: 20,),
-            const TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Username',
-              ),
-            ),
-            const SizedBox(height: 20,),
-            const TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Password',
-              ),
-            ),
-            const SizedBox(height: 20,),
-            ElevatedButton(
-              onPressed: (){
-                login();
-                },
-              child: const Text('Login'),
-            ),
+            Icon(FontAwesomeIcons.ethereum, color: constants.Colors.blue),
+            Text('The Auction' ,style: TextStyle(color: constants.Colors.colorText,fontFamily: 'Koulen'),),
           ],
         ),
       ),
       bottomNavigationBar: CurvedNavigationBar(
-          color: Color.fromARGB(233, 31, 31, 32),
+          key: _bottomNavigationKey,
+          index: 0,
+          color: constants.Colors.colorGray,
           animationCurve: Curves.fastLinearToSlowEaseIn,
           backgroundColor: Colors.white,
           items: const <Widget>[
-            Icon(FontAwesomeIcons.chartSimple, size: 30,color:  Color.fromARGB(255, 122, 122, 122)),
-            Icon(FontAwesomeIcons.magnifyingGlassDollar, size: 30,color:  Color.fromARGB(255, 122, 122, 122)),
-            Icon(FontAwesomeIcons.ethereum, size: 30,color: Color.fromARGB(255, 122, 122, 122)),
-            Icon(FontAwesomeIcons.wallet, size: 30,color: Color.fromARGB(255, 122, 122, 122)),
-            Icon(FontAwesomeIcons.gear, size: 30,color:  Color.fromARGB(255, 122, 122, 122)),
+            Icon(FontAwesomeIcons.chartSimple, size: 30,color:  constants.Colors.colorIcon),
+            Icon(FontAwesomeIcons.magnifyingGlassDollar, size: 30,color:  constants.Colors.colorIcon),
+            Icon(FontAwesomeIcons.arrowRightArrowLeft, size: 30,color: constants.Colors.colorIcon),
+            Icon(FontAwesomeIcons.wallet, size: 30,color: constants.Colors.colorIcon),
+            Icon(FontAwesomeIcons.gear, size: 30,color:  constants.Colors.colorIcon),
           ],
-      )
+         onTap: (index) {
+          setState(() {
+            _page = index;
+          });
+        },
+        letIndexChange: (index) => true,
+      ),
+      body: _pages[_page],
     );
   }
 }
