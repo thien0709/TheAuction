@@ -13,22 +13,24 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ListView(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 200,
-                height: 200,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.blue,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
+    return Align(
+      alignment: Alignment.center,
+      child: ListView(children: [
+        Row(
+          children: [
+          Stack(children: [
+            Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: constants.Colors.lightMint,
+                  width: 3.0,
                 ),
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
                 child: CachedNetworkImage(
                   imageUrl: 'https://picsum.photos/250?image=9',
                   placeholder: (context, url) =>
@@ -36,246 +38,227 @@ class _HomePageState extends State<HomePage> {
                   errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
-              const SizedBox(width: 32,),
-              Container(
+            ),
+            Positioned(
+              top: 200 * 0.8,
+              child: Container(
                 width: 200,
-                height: 200,
+                height: 200 * 0.2,
+                color: constants.Colors.colorGray,
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(FontAwesomeIcons.bitcoin,
+                        color: constants.Colors.lightOrange),
+                        SizedBox(width: 5),
+                    Text('NFT',
+                        style: TextStyle(
+                            color: constants.Colors.lightMint,
+                            fontFamily: 'Koulen')),
+                  ],
+                ),
+              ),
+            ),
+          ]),
+          const SizedBox(width: 20),
+          Stack(children: [
+            Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: constants.Colors.lightMint,
+                  width: 3.0,
+                ),
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
                 child: CachedNetworkImage(
-                  imageUrl: 'https://picsum.photos/250?image=10',
+                  imageUrl: 'https://picsum.photos/250?image=9',
                   placeholder: (context, url) =>
                       const CircularProgressIndicator(),
                   errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
-            ],
-          ),
-          const SizedBox(height: 32.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center, children: [
-            Container(
-              width: 200,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=11',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
             ),
-            const SizedBox(width: 32,),
-            Container(
-              width: 200,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=12',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
+            Positioned(
+              top: 200 * 0.8,
+              child: Container(
+                width: 200,
+                height: 200 * 0.2,
+                color: constants.Colors.colorGray,
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(FontAwesomeIcons.bitcoin,
+                        color: constants.Colors.lightOrange),
+                        SizedBox(width: 5),
+                    Text('NFT',
+                        style: TextStyle(
+                            color: constants.Colors.lightMint,
+                            fontFamily: 'Koulen')),
+                  ],
+                ),
               ),
             ),
           ]),
-          const SizedBox(height: 32.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center, children: [
+        ]),
+        const SizedBox(
+          height: 20,
+        ),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Stack(children: [
             Container(
               width: 200,
               height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=11',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: constants.Colors.lightMint,
+                  width: 3.0,
+                ),
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: CachedNetworkImage(
+                  imageUrl: 'https://picsum.photos/250?image=9',
+                  placeholder: (context, url) =>
+                      const CircularProgressIndicator(),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                ),
               ),
             ),
-            const SizedBox(width: 32,),
-            Container(
-              width: 200,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=12',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
-            ),
-          ]),
-          const SizedBox(height: 32.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center, children: [
-            Container(
-              width: 200,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=11',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
-            ),
-            const SizedBox(width: 32,),
-            Container(
-              width: 200,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=12',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
+            Positioned(
+              top: 200 * 0.8,
+              child: Container(
+                  child: const Row(
+                children: [
+                  Icon(FontAwesomeIcons.ethereum, color: constants.Colors.blue),
+                  Text('The Auction',
+                      style: const TextStyle(
+                          color: constants.Colors.colorText,
+                          fontFamily: 'Koulen')),
+                ],
+              )),
             ),
           ]),
-          const SizedBox(height: 32.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center, children: [
+          const SizedBox(width: 20),
+          Stack(children: [
             Container(
               width: 200,
               height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=11',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: constants.Colors.lightMint,
+                  width: 3.0,
+                ),
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: CachedNetworkImage(
+                  imageUrl: 'https://picsum.photos/250?image=9',
+                  placeholder: (context, url) =>
+                      const CircularProgressIndicator(),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                ),
               ),
             ),
-            const SizedBox(width: 32,),
+            Positioned(
+              top: 200 * 0.8,
+              child: Container(
+                  child: const Row(
+                children: [
+                  Icon(FontAwesomeIcons.ethereum, color: constants.Colors.blue),
+                  Text('The Auction',
+                      style: const TextStyle(
+                          color: constants.Colors.colorText,
+                          fontFamily: 'Koulen')),
+                ],
+              )),
+            ),
+          ])
+        ]),
+        const SizedBox(
+          height: 20,
+        ),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Stack(children: [
             Container(
               width: 200,
               height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=12',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: constants.Colors.lightMint,
+                  width: 3.0,
+                ),
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: CachedNetworkImage(
+                  imageUrl: 'https://picsum.photos/250?image=9',
+                  placeholder: (context, url) =>
+                      const CircularProgressIndicator(),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                ),
               ),
             ),
-          ]),
-          const SizedBox(height: 32.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center, children: [
-            Container(
-              width: 200,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=11',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
-            ),
-            const SizedBox(width: 32,),
-            Container(
-              width: 200,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=12',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
-            ),
-          ]),
-          const SizedBox(height: 32.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center, children: [
-            Container(
-              width: 200,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=11',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
-            ),
-            const SizedBox(width: 32,),
-            Container(
-              width: 200,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=12',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
-            ),
-          ]),
-          const SizedBox(height: 32.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center, children: [
-            Container(
-              width: 200,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=11',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
-            ),
-            const SizedBox(width: 32,),
-            Container(
-              width: 200,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=12',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
+            Positioned(
+              top: 200 * 0.8,
+              child: Container(
+                  child: const Row(
+                children: [
+                  Icon(FontAwesomeIcons.ethereum, color: constants.Colors.blue),
+                  Text('The Auction',
+                      style: const TextStyle(
+                          color: constants.Colors.colorText,
+                          fontFamily: 'Koulen')),
+                ],
+              )),
             ),
           ]),
-          const SizedBox(height: 32.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center, children: [
+          const SizedBox(width: 20),
+          Stack(children: [
             Container(
               width: 200,
               height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=11',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: constants.Colors.lightMint,
+                  width: 3.0,
+                ),
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: CachedNetworkImage(
+                  imageUrl: 'https://picsum.photos/250?image=9',
+                  placeholder: (context, url) =>
+                      const CircularProgressIndicator(),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                ),
               ),
             ),
-            const SizedBox(width: 32,),
-            Container(
-              width: 200,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=12',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
+            Positioned(
+              top: 200 * 0.8,
+              child: Container(
+                  child: const Row(
+                children: [
+                  Icon(FontAwesomeIcons.ethereum, color: constants.Colors.blue),
+                  Text('The Auction',
+                      style: const TextStyle(
+                          color: constants.Colors.colorText,
+                          fontFamily: 'Koulen')),
+                ],
+              )),
             ),
-          ]),
-          const SizedBox(height: 32.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center, children: [
-            Container(
-              width: 200,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=11',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
-            ),
-            const SizedBox(width: 32,),
-            Container(
-              width: 200,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/250?image=12',
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
-            ),
-          ]),
-        ],
-      ),
+          ])
+        ]),
+      ]),
     );
   }
 }

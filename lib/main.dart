@@ -37,15 +37,22 @@ class _MyHomePageState extends State<MyHomePage> {
     Center(child: Text('Page 4', style: TextStyle(fontSize: 24))),
     Login(),
   ];
+  final List<String> _titles = [
+    'The Auction',
+    'Search',
+    'Market',
+    'Wallet',
+    'Settings',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Row(
+        title: Row(
           children: [
-            Icon(FontAwesomeIcons.ethereum, color: constants.Colors.blue),
-            Text('The Auction' ,style: TextStyle(color: constants.Colors.colorText,fontFamily: 'Koulen'),),
+            const Icon(FontAwesomeIcons.ethereum, color: constants.Colors.blue),
+            Text(_titles[_page],style: const TextStyle(color: constants.Colors.colorText,fontFamily: 'Koulen')),
           ],
         ),
       ),
