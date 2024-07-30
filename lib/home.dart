@@ -13,10 +13,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.center,
-      child: ListView(children: [
+    return Center(
+      child: ListView(
         Row(
+          mainAxisAlignment: MainAxisAlignment.center, 
           children: [
           Stack(children: [
             Container(
