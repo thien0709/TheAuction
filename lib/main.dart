@@ -2,6 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:the_auction/constants/constants.dart' as constants;
+import 'package:the_auction/wallet.dart';
 import 'home.dart';
 import 'login.dart';
 void main() {
@@ -34,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
     HomePage(),
     Center(child: Text('Page 2', style: TextStyle(fontSize: 24))),
     Center(child: Text('Page 3', style: TextStyle(fontSize: 24))),
-    Center(child: Text('Page 4', style: TextStyle(fontSize: 24))),
+    Wallet(),
     Login(),
   ];
   final List<String> _titles = [

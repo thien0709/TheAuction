@@ -14,10 +14,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ListView(
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center, 
-          children: [
+      child: 
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Stack(children: [
             Container(
               width: 200,
@@ -83,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            Positioned(
+          Positioned(
               top: 200 * 0.8,
               child: Container(
                 width: 200,
@@ -106,159 +104,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ]),
         ]),
-        const SizedBox(
-          height: 20,
-        ),
-        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Stack(children: [
-            Container(
-              width: 200,
-              height: 200,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: constants.Colors.lightMint,
-                  width: 3.0,
-                ),
-                borderRadius: BorderRadius.circular(18),
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: CachedNetworkImage(
-                  imageUrl: 'https://picsum.photos/250?image=9',
-                  placeholder: (context, url) =>
-                      const CircularProgressIndicator(),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 200 * 0.8,
-              child: Container(
-                  child: const Row(
-                children: [
-                  Icon(FontAwesomeIcons.ethereum, color: constants.Colors.blue),
-                  Text('The Auction',
-                      style: const TextStyle(
-                          color: constants.Colors.colorText,
-                          fontFamily: 'Koulen')),
-                ],
-              )),
-            ),
-          ]),
-          const SizedBox(width: 20),
-          Stack(children: [
-            Container(
-              width: 200,
-              height: 200,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: constants.Colors.lightMint,
-                  width: 3.0,
-                ),
-                borderRadius: BorderRadius.circular(18),
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: CachedNetworkImage(
-                  imageUrl: 'https://picsum.photos/250?image=9',
-                  placeholder: (context, url) =>
-                      const CircularProgressIndicator(),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 200 * 0.8,
-              child: Container(
-                  child: const Row(
-                children: [
-                  Icon(FontAwesomeIcons.ethereum, color: constants.Colors.blue),
-                  Text('The Auction',
-                      style: const TextStyle(
-                          color: constants.Colors.colorText,
-                          fontFamily: 'Koulen')),
-                ],
-              )),
-            ),
-          ])
-        ]),
-        const SizedBox(
-          height: 20,
-        ),
-        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Stack(children: [
-            Container(
-              width: 200,
-              height: 200,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: constants.Colors.lightMint,
-                  width: 3.0,
-                ),
-                borderRadius: BorderRadius.circular(18),
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: CachedNetworkImage(
-                  imageUrl: 'https://picsum.photos/250?image=9',
-                  placeholder: (context, url) =>
-                      const CircularProgressIndicator(),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 200 * 0.8,
-              child: Container(
-                  child: const Row(
-                children: [
-                  Icon(FontAwesomeIcons.ethereum, color: constants.Colors.blue),
-                  Text('The Auction',
-                      style: const TextStyle(
-                          color: constants.Colors.colorText,
-                          fontFamily: 'Koulen')),
-                ],
-              )),
-            ),
-          ]),
-          const SizedBox(width: 20),
-          Stack(children: [
-            Container(
-              width: 200,
-              height: 200,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: constants.Colors.lightMint,
-                  width: 3.0,
-                ),
-                borderRadius: BorderRadius.circular(18),
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: CachedNetworkImage(
-                  imageUrl: 'https://picsum.photos/250?image=9',
-                  placeholder: (context, url) =>
-                      const CircularProgressIndicator(),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 200 * 0.8,
-              child: Container(
-                  child: const Row(
-                children: [
-                  Icon(FontAwesomeIcons.ethereum, color: constants.Colors.blue),
-                  Text('The Auction',
-                      style: const TextStyle(
-                          color: constants.Colors.colorText,
-                          fontFamily: 'Koulen')),
-                ],
-              )),
-            ),
-          ])
-        ]),
-      ]),
     );
   }
 }
