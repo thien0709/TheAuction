@@ -10,25 +10,39 @@ class Wallet extends StatefulWidget {
 
 class _WalletState extends State<Wallet> {
   int _balance = 110;
+  String _eye = 'eye';
   @override
   Widget build(BuildContext context) {
     return Column(
-     mainAxisAlignment: MainAxisAlignment.spaceAround,
-     crossAxisAlignment: CrossAxisAlignment.center,
      children: [
+      SizedBox(height: 15),
       Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('Total balance', style: TextStyle(fontFamily: 'Koulen',fontSize: 20)),
-          SizedBox(width: 5),
-          Icon(FontAwesomeIcons.eye, color: Colors.blue),
-        ],
-      ),
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(width: 10),
+            Text('Total balance',
+                style: TextStyle(fontFamily: 'SpaceMono', fontSize: 15)),
+            SizedBox(width: 5),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  _eye = _eye == 'eye' ? 'eye-slash' : 'eye';
+                });
+              },
+              child: Icon(
+                  _eye == 'eye'
+                      ? FontAwesomeIcons.eye
+                      : FontAwesomeIcons.eyeSlash,
+                  color: Colors.blue, size: 15,),
+            )
+          ],
+        ),
+        SizedBox(height: 10,),
        Row(
-         mainAxisAlignment: MainAxisAlignment.center,
+         mainAxisAlignment: MainAxisAlignment.start,
          children: [
-
-           Text('$_balance', style: TextStyle(fontSize: 24)),
+          SizedBox(width: 30),
+           Text(_eye == 'eye' ? '$_balance' : "*****", style: TextStyle(fontFamily: 'Koulen',fontSize: 24)),
            Icon(FontAwesomeIcons.dollarSign, color: Colors.blue),
     
          ]
@@ -36,6 +50,7 @@ class _WalletState extends State<Wallet> {
        Row(
          mainAxisAlignment: MainAxisAlignment.center,
          children: [
+
          ],
        )
      ],
